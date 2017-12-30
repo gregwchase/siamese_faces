@@ -9,7 +9,7 @@ This task seeks to check contrastive loss between similar images of people.
 
 
 ## Table of Contents
-1. [Data Set](#data set)
+1. [Data Set](#dataset)
 2. [Preprocessing](#preprocessing)
 3. [Model](#model)
 4. [Results](#results)
