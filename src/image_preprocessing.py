@@ -87,8 +87,6 @@ def scan_images(root_dir, output_dir):
     :return: cropped images of only faces, stored in output_dir
     """
     image_extensions = ["jpg", "png"]
-    num_faces = 0
-    num_images = 0
 
     for dir_name, subdir_list, file_list in os.walk(root_dir):
         print('Scanning directory: %s' % dir_name)
@@ -96,13 +94,10 @@ def scan_images(root_dir, output_dir):
             extension = os.path.splitext(filename)[1][1:]
             if extension in image_extensions:
                 faces = get_faces(os.path.join(dir_name, filename))
-                num_images += 1
 
                 for face in faces:
                     face_filename = os.path.join(output_dir, "{}".format(filename))
                     cv2.imwrite(face_filename, face)
-                    # print("\tWrote {} extracted from {}".format(face_filename, filename))
-                    num_faces += 1
 
 
 if __name__ == "__main__":
